@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище SMDCOMPONETSModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "SMDCOMPONETS.dbo.NewFujiScrapSQliteLine1" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="NewFujiScrapSQliteLine1">
+          <Key>
+            <PropertyRef Name="IDSQlite" />
+            <PropertyRef Name="DateTime" />
+          </Key>
+          <Property Name="InsertionTime" Type="datetime2" Precision="7" />
+          <Property Name="Line" Type="varchar" MaxLength="5" />
+          <Property Name="IDSQlite" Type="int" Nullable="false" />
+          <Property Name="DateTime" Type="datetime2" Precision="0" Nullable="false" />
+          <Property Name="Module" Type="tinyint" />
+          <Property Name="PCBCount" Type="int" />
+          <Property Name="Recipe" Type="varchar" MaxLength="50" />
+          <Property Name="Name1" Type="smallint" />
+          <Property Name="Name2" Type="smallint" />
+          <Property Name="Slot" Type="smallint" />
+          <Property Name="Name3" Type="smallint" />
+          <Property Name="PickUp" Type="float" />
+          <Property Name="TotalError" Type="float" />
+          <Property Name="Error" Type="float" />
+          <Property Name="Reject" Type="float" />
+          <Property Name="Dislodged" Type="float" />
+          <Property Name="NoPickUp" Type="float" />
+          <Property Name="Usage" Type="float" />
+          <Property Name="Name4" Type="tinyint" />
+          <Property Name="Part" Type="varchar" MaxLength="100" />
+          <Property Name="Name5" Type="tinyint" />
+          <Property Name="Feeder" Type="varchar" MaxLength="50" />
+          <Property Name="Module1" Type="tinyint" />
+        </EntityType>
+        <EntityContainer Name="Хранилище SMDCOMPONETSModelContainer">
+          <EntitySet Name="NewFujiScrapSQliteLine1" EntityType="Self.NewFujiScrapSQliteLine1" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [NewFujiScrapSQliteLine1].[InsertionTime] AS [InsertionTime], 
+    [NewFujiScrapSQliteLine1].[Line] AS [Line], 
+    [NewFujiScrapSQliteLine1].[IDSQlite] AS [IDSQlite], 
+    [NewFujiScrapSQliteLine1].[DateTime] AS [DateTime], 
+    [NewFujiScrapSQliteLine1].[Module] AS [Module], 
+    [NewFujiScrapSQliteLine1].[PCBCount] AS [PCBCount], 
+    [NewFujiScrapSQliteLine1].[Recipe] AS [Recipe], 
+    [NewFujiScrapSQliteLine1].[Name1] AS [Name1], 
+    [NewFujiScrapSQliteLine1].[Name2] AS [Name2], 
+    [NewFujiScrapSQliteLine1].[Slot] AS [Slot], 
+    [NewFujiScrapSQliteLine1].[Name3] AS [Name3], 
+    [NewFujiScrapSQliteLine1].[PickUp] AS [PickUp], 
+    [NewFujiScrapSQliteLine1].[TotalError] AS [TotalError], 
+    [NewFujiScrapSQliteLine1].[Error] AS [Error], 
+    [NewFujiScrapSQliteLine1].[Reject] AS [Reject], 
+    [NewFujiScrapSQliteLine1].[Dislodged] AS [Dislodged], 
+    [NewFujiScrapSQliteLine1].[NoPickUp] AS [NoPickUp], 
+    [NewFujiScrapSQliteLine1].[Usage] AS [Usage], 
+    [NewFujiScrapSQliteLine1].[Name4] AS [Name4], 
+    [NewFujiScrapSQliteLine1].[Part] AS [Part], 
+    [NewFujiScrapSQliteLine1].[Name5] AS [Name5], 
+    [NewFujiScrapSQliteLine1].[Feeder] AS [Feeder], 
+    [NewFujiScrapSQliteLine1].[Module1] AS [Module1]
+    FROM [dbo].[NewFujiScrapSQliteLine1] AS [NewFujiScrapSQliteLine1]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SMDCOMPONETSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="NewFujiScrapSQliteLine1">
+          <Key>
+            <PropertyRef Name="IDSQlite" />
+            <PropertyRef Name="DateTime" />
+          </Key>
+          <Property Name="InsertionTime" Type="DateTime" Precision="7" />
+          <Property Name="Line" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="IDSQlite" Type="Int32" Nullable="false" />
+          <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Module" Type="Byte" />
+          <Property Name="PCBCount" Type="Int32" />
+          <Property Name="Recipe" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Name1" Type="Int16" />
+          <Property Name="Name2" Type="Int16" />
+          <Property Name="Slot" Type="Int16" />
+          <Property Name="Name3" Type="Int16" />
+          <Property Name="PickUp" Type="Double" />
+          <Property Name="TotalError" Type="Double" />
+          <Property Name="Error" Type="Double" />
+          <Property Name="Reject" Type="Double" />
+          <Property Name="Dislodged" Type="Double" />
+          <Property Name="NoPickUp" Type="Double" />
+          <Property Name="Usage" Type="Double" />
+          <Property Name="Name4" Type="Byte" />
+          <Property Name="Part" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Name5" Type="Byte" />
+          <Property Name="Feeder" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Module1" Type="Byte" />
+        </EntityType>
+        <EntityContainer Name="SMDCOMPONETSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="NewFujiScrapSQliteLine1" EntityType="Self.NewFujiScrapSQliteLine1" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище SMDCOMPONETSModelContainer" CdmEntityContainer="SMDCOMPONETSEntities">
+          <EntitySetMapping Name="NewFujiScrapSQliteLine1">
+            <EntityTypeMapping TypeName="SMDCOMPONETSModel.NewFujiScrapSQliteLine1">
+              <MappingFragment StoreEntitySet="NewFujiScrapSQliteLine1">
+                <ScalarProperty Name="InsertionTime" ColumnName="InsertionTime" />
+                <ScalarProperty Name="Line" ColumnName="Line" />
+                <ScalarProperty Name="IDSQlite" ColumnName="IDSQlite" />
+                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+                <ScalarProperty Name="Module" ColumnName="Module" />
+                <ScalarProperty Name="PCBCount" ColumnName="PCBCount" />
+                <ScalarProperty Name="Recipe" ColumnName="Recipe" />
+                <ScalarProperty Name="Name1" ColumnName="Name1" />
+                <ScalarProperty Name="Name2" ColumnName="Name2" />
+                <ScalarProperty Name="Slot" ColumnName="Slot" />
+                <ScalarProperty Name="Name3" ColumnName="Name3" />
+                <ScalarProperty Name="PickUp" ColumnName="PickUp" />
+                <ScalarProperty Name="TotalError" ColumnName="TotalError" />
+                <ScalarProperty Name="Error" ColumnName="Error" />
+                <ScalarProperty Name="Reject" ColumnName="Reject" />
+                <ScalarProperty Name="Dislodged" ColumnName="Dislodged" />
+                <ScalarProperty Name="NoPickUp" ColumnName="NoPickUp" />
+                <ScalarProperty Name="Usage" ColumnName="Usage" />
+                <ScalarProperty Name="Name4" ColumnName="Name4" />
+                <ScalarProperty Name="Part" ColumnName="Part" />
+                <ScalarProperty Name="Name5" ColumnName="Name5" />
+                <ScalarProperty Name="Feeder" ColumnName="Feeder" />
+                <ScalarProperty Name="Module1" ColumnName="Module1" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

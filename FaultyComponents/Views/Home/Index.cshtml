@@ -1,0 +1,15 @@
+﻿@model List<string>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div style="display:block;">
+
+    @foreach (var item in Model)
+    {
+        @Html.ActionLink($"{item}", "GetDataLine", new { Line = item }, new { @style = "font-size: 50px; margin: 1%", @class = "btn btn-success" });
+    }
+
+</div>
+

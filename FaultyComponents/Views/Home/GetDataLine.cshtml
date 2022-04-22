@@ -1,0 +1,130 @@
+﻿@model IEnumerable<FaultyComponents.Classes.Module>
+
+@{
+    ViewBag.Title = "GetDataLine";
+}
+
+@*<meta http-equiv="refresh" content="45">*@
+<style>
+
+    table {
+        table-layout: fixed;
+        width: 100%;
+    }
+
+    tbody {
+        margin-bottom: 0.5%;
+        border-bottom: 1px dashed gray;
+    }
+
+    .head {
+        font-size: 24px;
+        text-align: left;
+        background-color: lightgray;
+        margin-bottom: 0.5%;
+        border-bottom: 1px dashed gray;
+    }
+
+    th {
+        border: 1px solid gray;
+        text-align: center;
+        word-wrap: break-word;
+        font-size: 14px;
+        background-color: gold;
+    }
+
+    td {
+        border: 1px solid gray;
+        margin: 1px;
+        text-align: center;
+        /*word-wrap: break-word;*/
+        width: auto;
+        font-size: 20px;
+    }
+
+    h2 {
+        margin: 0px;
+        padding: 0px;
+    }
+</style>
+
+<h2>@Model.Select(c => c.Line).FirstOrDefault() </h2>
+
+
+<h2> Время @Model.Select(c => c.date).FirstOrDefault()</h2>
+
+<div style="display:flex; align-self: center">
+
+    @*<div>
+            <img src="@Url.Content("~/Image/Resistor.png")" alt="Image" width="440" height="161" />
+            <img src="@Url.Content("~/Image/Capacitor.bmp")" alt="Image" width="440" height="161" />
+        </div>*@
+</div>
+
+<div>
+
+
+    <table>
+        <tr>
+            <th style="width: 13%; text-align: left">Программа</th>
+            <th style="width: 12%; text-align: left">Cust</th>
+            <th style="width:7%">ВсегоВзятий</th>
+            <th style="width:7%">ВсегоИспользовано</th>
+            <th style="width:7%">ВсегоПотеряно</th>
+            <th style="width:7%">ОшибкаРаспознования</th>
+            <th style="width:7%">СброшеноПоКоманде</th>
+            <th style="width:7%">ПотеряКомпонента</th>
+            <th style="width:7%">ОшибкаВзятия</th>
+            <th style="width:7%">ПроцентТехПотерь</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            if (item.Slots.Count == 0)
+            {
+                continue;
+            }
+
+            <tr>
+                <th colspan="10" class="head">Модуль №@item.Number</th>
+            </tr>
+
+            foreach (var ii in item.Slots)
+            {
+                if (ii.PGs.Count == 0)
+                {
+                    continue;
+                }
+
+                <tr>
+                    <th>Слот: @ii.Number</th>
+                </tr>
+
+
+
+                foreach (var i in ii.PGs)
+                {
+                    if (i.Процент_ТехПотерь.Value == 0)
+                    {
+                        continue;
+                    }
+
+                    <tr>
+                        <td style="width:13%; text-align:left; font-size:12px;">@i.Recipe</td>
+                        <td style="width: 12%; text-align: left;font-size:12px;">@i.Part</td>
+                        <td style="width:7%">@i.Всего_Взятий</td>
+                        <td style="width:7%">@i.Всего_Использовано</td>
+                        <td style="width:7%">@i.Всего_Потеряно</td>
+                        <td style="width:7%">@i.Ошибка_Распознования</td>
+                        <td style="width:7%">@i.Сброшено_ПоКоманде</td>
+                        <td style="width:7%">@i.Потеря_Компонента</td>
+                        <td style="width:7%">@i.Ошибка_Взятия</td>
+                        <td style="width:7%">@i.Процент_ТехПотерь.Value.ToString("#.##")</td>
+                    </tr>
+                }
+            }
+
+
+        }
+    </table>
+</div>
